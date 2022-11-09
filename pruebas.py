@@ -14,7 +14,7 @@ if password:
     tn.read_until(b"Password: ")
     tn.write(password.encode('ascii') + b"\n")
 
-eleccion=input("Teclea las acciones realizar en el quipo \n 1.-Cambiar el nombre del dispositivo \n 2.-Asignar una ip ")
+eleccion=input("Teclea las acciones realizar en el quipo \n \n \t 1.-Cambiar el nombre del dispositivo \n 2.-Asignar una ip \n  ")
 if eleccion =="1":
     tn.write(b"config terminal\n")
     nombre=input("Teclea el valor del nombre: ")
@@ -40,5 +40,5 @@ elif eleccion == "2":
     print(tn.read_all().decode('ascii'))
 
 
-print(tn.read_all().decode('ascii'))
+souprint(tn.read_all().decode('ascii'))
 
