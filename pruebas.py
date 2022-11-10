@@ -70,11 +70,11 @@ elif eleccion == "4":
         tn.write(password.encode('ascii') + b"\n")
     numero=input("Escribe el numero de la Vlan: ")
     nombre=input("Escribe el  nombre de la vlan: ")
-    direccion=input("Escribe la direccion ip a implementar junto con su mascara de red separados por un espacio")
+    direccion=input("Escribe la direccion ip a implementar junto con su mascara de red separados por un espacio: ")
     tn.write(b"configure terminal\n ")
-    tn.write(b"vlan "+ numero('utf-8') + b"\n ")
-    tn.write(b"vlan "+ nombre('utf-8') + b"\n ")
-    tn.write(b"interface vlan "+ numero('utf-8') + b"\n ")
+    tn.write(b"vlan "+ numero.encode('utf-8') + b"\n ")
+    tn.write(b"name "+ nombre.encode('utf-8') + b"\n ")
+    tn.write(b"interface vlan "+ numero.encode('utf-8') + b"\n ")
     tn.write(b"ip address "+ direccion.encode('utf-8') + b"\n ")
     tn.write(b"no shutdown \n") 
     tn.write(b"end\n")  
@@ -92,7 +92,7 @@ elif eleccion == "4":
         tn.write(password.encode('ascii') + b"\n")
     modo=input("Escribe la interfaz a utilizar la Vlan : ")
     interfaz=input("Teclea el modo a utilizar en la interfaz: ")
-    tn.write(b"configure terminal\n ")
+    tn.write(b"configure terminal \n ")
     tn.write(b"interfa "+ interfaz.encode('utf-8') + b"\n ")
     tn.write(b"switchport mode "+ modo.encode('utf-8') + b"\n ")
     
@@ -101,5 +101,5 @@ elif eleccion == "4":
 
 
 
-#print(tn.read_all().decode('ascii'))
+print(tn.read_all().decode('ascii'))
 
